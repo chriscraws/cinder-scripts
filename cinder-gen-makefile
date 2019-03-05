@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Run cmake in the current cinder project director
+# This script must be run in the root folder of a cinder project
+# Generate a cinder project with cinder-create
+
+cd proj/cmake
+mkdir build
+cd build
+cmake ..

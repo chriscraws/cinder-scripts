@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Build a cinder project. Must be run in the root of a cinder project
+# Runs cinder-gen-makefile if the build has not been set up
+
+if [ ! -d "proj/cmake/build" ]; then
+  cinder-gen-makefile
+fi
+
+cd proj/cmake/build
+make

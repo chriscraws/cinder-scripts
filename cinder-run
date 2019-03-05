@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Launches a debug build of a cinder project.
+# runs cinder-gen-makefile and cinder-build if necessary.
+# must be run in the root directory of a cinder project
+# created with cinder-create
+
+if [ ! -d "proj/cmake/build/Debug" ]; then
+  cinder-build
+fi
+
+PROJECT_NAME=${PWD##*/}
+
+./proj/cmake/build/Debug/$PROJECT_NAME/$PROJECT_NAME
