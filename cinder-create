@@ -4,7 +4,7 @@
 
 # Locations of important things..
 
-CINDER_DIR="$HOME/personal/Cinder"
+CINDER_DIR="$HOME/Dropbox/dev/libraries/Cinder"
 BASIC_APP_DIR="$CINDER_DIR/samples/BasicApp"
 
 # Check to make sure that a name was given
@@ -24,7 +24,7 @@ cp -R "$BASIC_APP_DIR" "$PWD/$PROJECT_NAME"
 cd $PROJECT_NAME
 mv src/BasicApp.cpp "src/$PROJECT_NAME.cpp"
 
-sed -i 's/BasicApp/'"$PROJECT_NAME"'/g' "src/$PROJECT_NAME.cpp" proj/cmake/CMakeLists.txt
+sed -i 's|BasicApp|'"$PROJECT_NAME"'|g' "src/$PROJECT_NAME.cpp" proj/cmake/CMakeLists.txt
 
 # Fix the path of CINDER in the cmake file
 sed -i '6d;5 a get_filename_component( CINDER_PATH "'"$CINDER_DIR"'" ABSOLUTE )' proj/cmake/CMakeLists.txt

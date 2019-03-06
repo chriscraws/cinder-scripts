@@ -11,4 +11,11 @@ fi
 
 PROJECT_NAME=${PWD##*/}
 
-./proj/cmake/build/Debug/$PROJECT_NAME/$PROJECT_NAME
+EXECUTABLE=./proj/cmake/build/Debug/$PROJECT_NAME/$PROJECT_NAME
+MAC_EXECUTABLE=$EXECUTABLE.app/Contents/MacOS/$PROJECT_NAME
+
+if [ -d $EXECUTABLE.app ]; then
+  $MAC_EXECUTABLE
+else
+  $EXECUTABLE
+fi
